@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import CityInput from './components/city-input';
 
+import CityInput from './components/city-input';
+import CardContainer from './components/card-container';
 
 class App extends React.Component {
 
@@ -35,16 +36,7 @@ class App extends React.Component {
           </div>
         </div>
         {this.state.cityData ? 
-            <div className="row mt-5">
-              <div className="card">
-                <img className="card-img-top" src="..." alt="Card cap"/>
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
+            <CardContainer cityData={this.state.cityData}/>
           : null}
       </div>
     );
