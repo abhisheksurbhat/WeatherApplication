@@ -24,7 +24,7 @@ class CityInput extends React.Component {
           Enter the city for which you want to get weather data
         </h4>
         <div className="d-flex flex-wrap">
-          <input type="text" className="form-control mt-4 w-50" aria-label="Large"
+          <input type="text" className="form-control mt-4 w-25" aria-label="Large"
             aria-describedby="inputGroup-sizing-sm"
             onChange={this.handleCityInput} />
           <button className="btn btn-primary mt-4 ml-5" onClick={this.selectCity}>
