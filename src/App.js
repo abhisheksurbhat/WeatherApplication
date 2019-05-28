@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import CityInput from './components/city-input';
 import CardContainer from './components/card-container';
+import Error from './components/error';
 
 class App extends React.Component {
 
@@ -10,6 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       cityData: null,
+      error : false
     }
   }
 
@@ -19,10 +21,13 @@ class App extends React.Component {
         headers: {'city': city}
     })
     .then((res) => {
-      this.setState({cityData: res.data});
+      this.setState({
+        cityData: res.data,
+        error: false
+      });
     })
     .catch((err) => {
-      console.log(err);
+      this.setState({error: true});
     })
   }
 
@@ -35,9 +40,12 @@ class App extends React.Component {
             <CityInput handleCity={this.handleCityChange}/>
           </div>
         </div>
-        {this.state.cityData ? 
+        {this.state.error ? 
+            <Error />
+          : this.state.cityData !== null ? 
             <CardContainer cityData={this.state.cityData}/>
-          : null}
+            : <div></div>
+        }
       </div>
     );
   }

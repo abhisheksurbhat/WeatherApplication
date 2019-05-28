@@ -14,7 +14,6 @@ const getDate = (date) => {
 
 router.get('/getWeatherData', (req, res) => {
     let city = req.headers['city'];
-    let tempObj = {};
     axios.get(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}
         &apikey=${apikey}&units=metric`
@@ -25,7 +24,6 @@ router.get('/getWeatherData', (req, res) => {
         let refDate = getDate(allData.list[0].dt_txt);
         let refTemp = allData.list[0].main.temp;
         let refWindSpeed = allData.list[0].wind.speed;
-        let refMain = allData.list[0].weather[0].main;
         allData.list.forEach(element => {
             let currentDate = getDate(element.dt_txt);
             if(currentDate === refDate) {
@@ -39,7 +37,7 @@ router.get('/getWeatherData', (req, res) => {
                     date: refDate,
                     temp: refTemp,
                     wind: refWindSpeed,
-                    main: refMain
+                    main: element.weather[0].main
                 };
                 finalDataList.push(tempObj);
                 refDate = getDate(element.dt_txt);
@@ -58,8 +56,7 @@ router.get('/getWeatherData', (req, res) => {
         res.status(200).json(finalDataList);
     })
     .catch((err) => {
-        console.log(err);
-        res.statusCode(500);
+        res.sendStatus(err.response.status);
     })
 })
 

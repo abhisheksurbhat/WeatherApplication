@@ -13,10 +13,10 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm start\" \"node server/app.js\"",
     "dev": "concurrently \"npm start\" \"nodemon server/app.js\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
