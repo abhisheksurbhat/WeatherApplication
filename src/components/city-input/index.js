@@ -7,6 +7,8 @@ class CityInput extends React.Component {
     this.state = {
       city: ""
     }
+    this.handleCityInput = this.handleCityInput.bind(this);
+    this.selectCity = this.selectCity.bind(this);
   }
 
   handleCityInput = (e) => {

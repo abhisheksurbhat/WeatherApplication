@@ -21,12 +21,12 @@ let stubData = [
       "main": "Rain"
     },
     {
-      "description": "light rain",
+      "description": "clear",
       "city": "Bangalore",
       "date": "31-05-2019",
       "temp": 25.406093750000004,
       "wind": 5.959296875,
-      "main": "Rain"
+      "main": "Clear"
     },
     {
       "description": "overcast clouds",
@@ -34,7 +34,7 @@ let stubData = [
       "date": "01-06-2019",
       "temp": 26.609531250000003,
       "wind": 5.098281249999999,
-      "main": "Clouds"
+      "main": "none"
     },
     {
       "description": "moderate rain",

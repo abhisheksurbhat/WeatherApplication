@@ -16,27 +16,23 @@
     "start": "react-scripts start",
     "dev": "concurrently \"npm start\" \"nodemon server/app.js\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.16.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.2",
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.0",
+    "sinon": "^7.3.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js"
     ]
   }
 }
