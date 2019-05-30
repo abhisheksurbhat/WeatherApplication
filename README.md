@@ -7,7 +7,8 @@ will be shown on the screen below the search box.
 ## To run the application
 1. Clone the repository.
 2. Run `npm install`
-3. Run `npm start`
+3. Run `npm start` in one terminal.
+4. Open another terminal at the same directory and run `node server/app.js`
 
 ## To run the application in Development mode
 1. Clone the repository and install the necessaet modules.
