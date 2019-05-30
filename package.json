@@ -13,16 +13,18 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "concurrently \"npm start\" \"node server/app.js\"",
+    "start": "react-scripts start",
     "dev": "concurrently \"npm start\" \"nodemon server/app.js\"",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "devDependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2",
     "nodemon": "^1.19.0"
   },
   "browserslist": {
